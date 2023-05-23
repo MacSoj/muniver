@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>MUNIVERS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="./css/card.css">
+  <link href="./imagenes/Munivers.png" rel="icon">
+  <link href="./imagenes/Munivers.png" rel="apple-touch-icon">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrapper" id="app">
+    <div class="card-form">
+      <div class="card-form__inner">
+        <div class="card-input">
+          <label for="cardNumber" class="card-input__label">Nombre Completo</label>
+          <input type="text" id="cardNumber" class="card-input__input" v-mask="generateCardNumberMask" v-model="cardNumber" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardNumber" autocomplete="off">
+        </div>
+        <div class="card-input">
+          <label for="cardName" class="card-input__label">Canton</label>
+          <select class="card-input__input -select" id="cardMonth" v-model="cardMonth" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardDate">
+            <option value="" disabled selected>Canton</option>
+            <option selected>Panul</option>
+            <option value="1">Pachichaj</option>
+            <option value="2">Panabaj</option>
+          </select>        </div>
+        <div class="card-form__row">
+          <div class="card-form__col">
+            <div class="card-form__group">
+              <label for="cardMonth" class="card-input__label">Tipo de servicio a reportar</label>
+              <select class="card-input__input -select" id="cardMonth" v-model="cardMonth" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardDate">
+                <option value="" disabled selected>Servicio</option>
+                <option selected>Agua</option>
+                <option value="1">Energia Electrica</option>
+                <option value="2">Cableado caido</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="card-form__row">
+            <div class="card-form__col">
+              <div class="card-form__group">
+                <label for="cardMonth" class="card-input__label">Comente la falla de su servicio</label>
+                <textarea name="" id="" cols="65" rows="10"></textarea>
+              </div>
+            </div>
+          </div>
+
+        <button class="card-form__button">
+          Realizar solicitud
+        </button>
+
+        <form action="servicio.html" method="POST">
+          <button class="card-form__button">
+            Cancelar
+          </button>
+        </form>
+      </div>
+    </div>
+    
+  </div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+<script src='https://unpkg.com/vue-the-mask@0.11.1/dist/vue-the-mask.js'></script><script  src="./js/card.js"></script>
+
+</body>
+</html>
